@@ -1,0 +1,12 @@
+<bpmn:definition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI">
+  <bpmn:process id="Main" isExecutable="true">
+    <bpmn:startEvent id="Start_Event" name="Start">
+      <bpmn:outgoing>Flow_6NDLdR</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:businessRuleTask id="Task_SZVBJp" name="Task 1" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_6NDLdR</bpmn:incoming>
+      <bpmn:outgoing>Flow_45yHEa</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_6NDLdR" sourceRef="Start_Event" targetRef="Task_SZVBJp"/>
+  </bpmn:process>
+</bpmn:definition>

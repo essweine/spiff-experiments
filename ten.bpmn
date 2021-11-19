@@ -1,0 +1,57 @@
+<bpmn:definition xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI">
+  <bpmn:process id="Main" isExecutable="true">
+    <bpmn:startEvent id="Start_Event" name="Start">
+      <bpmn:outgoing>Flow_DLNcim</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:businessRuleTask id="Task_gjA81W" name="Task 10" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_DLNcim</bpmn:incoming>
+      <bpmn:outgoing>Flow_k0qfSl</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_DLNcim" sourceRef="Start_Event" targetRef="Task_gjA81W"/>
+    <bpmn:businessRuleTask id="Task_GEXgfs" name="Task 9" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_k0qfSl</bpmn:incoming>
+      <bpmn:outgoing>Flow_Wp9U1h</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_k0qfSl" sourceRef="Task_gjA81W" targetRef="Task_GEXgfs"/>
+    <bpmn:businessRuleTask id="Task_eMjVE8" name="Task 8" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_Wp9U1h</bpmn:incoming>
+      <bpmn:outgoing>Flow_EAzZhT</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_Wp9U1h" sourceRef="Task_GEXgfs" targetRef="Task_eMjVE8"/>
+    <bpmn:businessRuleTask id="Task_jLcFml" name="Task 7" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_EAzZhT</bpmn:incoming>
+      <bpmn:outgoing>Flow_JY0XBO</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_EAzZhT" sourceRef="Task_eMjVE8" targetRef="Task_jLcFml"/>
+    <bpmn:businessRuleTask id="Task_l8hmQ9" name="Task 6" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_JY0XBO</bpmn:incoming>
+      <bpmn:outgoing>Flow_hV8Fxg</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_JY0XBO" sourceRef="Task_jLcFml" targetRef="Task_l8hmQ9"/>
+    <bpmn:businessRuleTask id="Task_ToSpWI" name="Task 5" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_hV8Fxg</bpmn:incoming>
+      <bpmn:outgoing>Flow_Brgbai</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_hV8Fxg" sourceRef="Task_l8hmQ9" targetRef="Task_ToSpWI"/>
+    <bpmn:businessRuleTask id="Task_ZAnXyf" name="Task 4" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_Brgbai</bpmn:incoming>
+      <bpmn:outgoing>Flow_yovOHK</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_Brgbai" sourceRef="Task_ToSpWI" targetRef="Task_ZAnXyf"/>
+    <bpmn:businessRuleTask id="Task_3SD0i4" name="Task 3" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_yovOHK</bpmn:incoming>
+      <bpmn:outgoing>Flow_3KIqVk</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_yovOHK" sourceRef="Task_ZAnXyf" targetRef="Task_3SD0i4"/>
+    <bpmn:businessRuleTask id="Task_zN42VJ" name="Task 2" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_3KIqVk</bpmn:incoming>
+      <bpmn:outgoing>Flow_hEQk0s</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_3KIqVk" sourceRef="Task_3SD0i4" targetRef="Task_zN42VJ"/>
+    <bpmn:businessRuleTask id="Task_PjgiLN" name="Task 1" camunda:decisionRef="Item_Status_Decision">
+      <bpmn:incoming>Flow_hEQk0s</bpmn:incoming>
+      <bpmn:outgoing>Flow_DFWueO</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_hEQk0s" sourceRef="Task_zN42VJ" targetRef="Task_PjgiLN"/>
+  </bpmn:process>
+</bpmn:definition>
